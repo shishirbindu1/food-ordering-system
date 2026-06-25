@@ -1,5 +1,25 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.15"
+  "name": "food-ordering-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shishirbindu1/food-ordering-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shishirbindu1/food-ordering-system/issues"
+  },
+  "homepage": "https://github.com/shishirbindu1/food-ordering-system#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
   }
 }
