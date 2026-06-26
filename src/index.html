@@ -18,8 +18,39 @@
         <button class="backButton">Back</button>
         <p class="selectedTable"></p>
         <h1 class="font-bold text-xl">menu item below</h1>
+
+        <div class="orderFromTable my-10 w-1/2">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="border-b-2">
+                <th class="text-left py-2">Item</th>
+                <th class="text-center py-2">Qty</th>
+                <th class="text-right py-2">Price</th>
+                <th class="text-right py-2">Total</th>
+              </tr>
+            </thead>
+
+            <tbody class="cartItems">
+
+
+
+            </tbody>
+
+            <tfoot>
+              <tr class="border-t-2 font-bold">
+                <td colspan="3" class="text-right pt-3">
+                  Grand Total
+                </td>
+                <td class="text-right pt-3 totalPrice">
+                  Rs. 0
+                </td>
+              </tr>
+            </tfoot>
+
+          </table>
+        </div>
         <div class="wrapMenu grid grid-cols-4 gap-y-5">
-          
+
         </div>
       </div>
     </div>
