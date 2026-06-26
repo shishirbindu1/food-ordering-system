@@ -73,13 +73,12 @@ const addToCart = document.querySelectorAll(".addToCart");
 addToCart.forEach((button) => {
   button.addEventListener("click", (e) => {
     const id = Number(e.target.dataset.itemId);
-    let selectedItem = null;  
+    let selectedItem = null; 
     menuItems.forEach((item) => {
-     
       if (item.id === id) {
         selectedItem = item;
       }
-      
+    
     });
     if (selectedItem) {
       cart.push(selectedItem);
