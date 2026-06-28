@@ -1,14 +1,15 @@
 import menuItems from './menuData.js'
 let cart = []
 
-menuItems.forEach((item)=>{
-   let exist = cart.find(cartItem=>cartItem.name ===item.name)
-   if(exist){
-    console.log('hello')
-   }else{
-    cart.push(item)
-   }
-   console.log(cart.name)
+menuItems.forEach(items=>{
+    const exist= cart.find(item =>item.name===items.name)
+    if(exist){
+        exist.quantity = (exist.quantity ||1)+1
+    }else{
+        cart.push({...items, quantity:1})
+    }
+    
 })
+console.log(cart)
 
 
