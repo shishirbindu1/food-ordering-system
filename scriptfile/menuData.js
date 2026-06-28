@@ -5,18 +5,7 @@ const menuItems = [
     description: "Strong black coffee",
     price: 180,
   },
-  {
-    id: 1,
-    name: "Espresso",
-    description: "Strong black coffee",
-    price: 180,
-  },
-  {
-    id: 2,
-    name: "Americano",
-    description: "Espresso with hot water",
-    price: 220,
-  },
+
   {
     id: 2,
     name: "Americano",
