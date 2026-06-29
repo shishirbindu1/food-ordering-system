@@ -10,8 +10,9 @@ const cartItems      = document.querySelector(".cartItems");
 const totalPrice     = document.querySelector(".totalPrice");
 
 // ─── State ──────────────────────────────────────────────────
-let tableNo = null;
-let cart    = [];
+let currentTable = null;
+let table=10
+let cart    = {};
 
 // ─── Generate Tables ────────────────────────────────────────
 function generateTables() {
@@ -50,17 +51,22 @@ function setActiveTable(tableDiv) {
   });
   tableDiv.classList.add("bg-green-500");
 }
+//——————create array object——————————————————————————
+
+for(let i=1;i<=table; i++){
+  cart[i]=[]
+}
 
 // ─── Add Item To Cart ────────────────────────────────────────
 function addItemToCart(id) {
   const selectedItem = menuItems.find((item) => item.id === id);
   if (!selectedItem) return;
 
-  const itemExist = cart.find((item) => item.name === selectedItem.name);
+  const itemExist = cart[currentTable].find((item) => item.name === selectedItem.name);
   if (itemExist) {
     itemExist.quantity = (itemExist.quantity || 1) + 1;
   } else {
-    cart.push({ ...selectedItem, quantity: 1 });
+    cart[currentTable].push({ ...selectedItem, quantity: 1 });
   }
 
   renderCart();
@@ -71,7 +77,7 @@ function renderCart() {
   cartItems.innerHTML = "";
   let total = 0;
 
-  cart.forEach((item) => {
+  cart[currentTable].forEach((item) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${item.name}</td>
@@ -95,8 +101,9 @@ tableContainer.addEventListener("click", (e) => {
   const table = e.target.closest(".table");
   setActiveTable(table);
 
-  tableNo = table.dataset.table;
-  selectedTable.innerText = `Table: ${tableNo}`;
+  currentTable = table.dataset.table;
+  renderCart()
+  selectedTable.innerText = `Table: ${currentTable}`;
 
   tableContainer.classList.add("hidden");
   menu.classList.remove("hidden");
